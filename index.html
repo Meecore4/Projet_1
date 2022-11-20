@@ -55,7 +55,7 @@
                 <img class="langage" src="assets/langageinformatique.jpg" alt="langage"/>
                 
                 <img class="one" src="assets/youssef.png" alt="Youssef"/>
-
+                
                        
             </div>            
             </div>      
@@ -69,8 +69,8 @@
                 
             
 
-
-
+        <div class="position">
+        <div class="wrapper">
             <div class="eleves">  
                    
           
@@ -137,12 +137,8 @@
                 <div class="eleve">
                         <img src="assets/avatarschool.png" alt="Nicolas Guy"/>
                         <h2>Nicolas Guy</h2>
+
                 </div> 
-                <div class="eleve">
-                    <img src="assets/workteam.jpg" alt="workteam"/>
-
-
-                </div>
                 <div class="eleve">
                         <img src="assets/avatarschool.png" alt="Mohamed Kadour"/>
                         <h2>Mohamed Kadour</h2>
@@ -151,8 +147,42 @@
                         <img src="assets/avatarschool.png" alt="Eric Reydet"/>
                         <h2>Eric Reydet</h2>
                 </div>
-
-                </div>
+            </div>
+            </div>
+            </div>
+            <div class="formulaire">
+                <div class="contactez-nous">
+                    <h2>Ecris moi ton message pour me donner ton avis</h2>
+                    <p>Un problème, une question, envie de m'envoyer un message d’amour ? N’hésite pas à utiliser ce formulaire pour prendre contact avec moi!</p>
+                    <form action="/page-traitement-donnees" method="post">
+                    <div>
+                    <label for="nom">Ton nom,prénom ou pseudo</label>
+                    <input type="text" id="nom" name="nom" placeholder="Youssef" required>
+                    </div>
+                    <div>
+                    <label for="email">Ton e-mail</label>
+                    <input type="email" id="email" name="email" placeholder="monadresse@mail.com" required>
+                    </div>
+                    <div>
+                    <label for="sujet">Quel est le sujet de ton message ?</label>
+                    <select name="sujet" id="sujet" required>
+                    <option value="" disabled selected hidden>Choisi le sujet de ton message</option>
+                    <option value="probleme-compte">Félicitations</option>
+                    <option value="question-produit">Peut mieux faire</option>
+                    <option value="suivi-commande">Nul nul nul</option>
+                    <option value="autre">Autre...</option>
+                    </select>
+                    </div>
+                    <div>
+                    <label for="message">Ton message</label>
+                    <textarea id="message" name="message" placeholder="Hey Alicia !" required></textarea>
+                    </div>
+                    <div>
+                    <button type="submit">Envoyer mon message</button>
+                    </div>
+                    </form>
+                    </div>
+            </div>
         </main>
     <footer>
         Crée et réalisée par Alicia Critelli
