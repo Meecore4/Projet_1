@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
 :root{
 
     --primary-font-family: "Karla", sans-serif;
@@ -6,74 +7,25 @@
         
 }
 
-.container{
-    
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    
-}
-
-.team{
-   
-     display:flex;
-     justify-content: center;
-     flex-wrap:wrap;
-   
-}
 
 
-.langage{
+/* ==============================================LOGO ET HEADER================================================*/
 
-    border-radius: 50%;
-    max-width: 400px;
-       
-}
-
-.one{
-
-   border-radius: 20%;
-   max-width: 300px;
-
-}
-
-a{
-    text-decoration: none;
-    color:black;
-
-}
-
-a:hover{
-
-    color:white;
-}
-    
-body {
-    
-    font-family: var(--primary-font-family);
-    background-color: #e2ba82;
-}
-
-/*==================HEADER==================*/
 
 header{
 
+    display: flex; 
     position: relative;
-    display: flex;
+    background-color:#c78e60;
     justify-content: space-between;
     align-items: center;
-    padding: var(--spacing);
     font-size: 22px;
     font-weight: bold;
-    border: 2px solid white;
-    margin:10px;
-    background-color: #765342;
-    
 }
 
 .logo{
 
-    width: 90px;
+    width: 70px;
     border: #0f0f0f 2px solid;
     background-color: #ffffee;    
 }
@@ -82,6 +34,28 @@ header{
 
     max-width: 100%;
   
+}
+
+/* ==============================================MENU HAMBURGER & DESKTOP======================================*/
+
+.mobile{
+
+    position:absolute;
+    display:none;
+}
+
+.desktop ul{
+
+    display:flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+    gap: var(--spacing);
+}
+
+.barre{
+
+    border-bottom: 2px solid white;
+    width:30px;
 }
 
 .btn{
@@ -93,48 +67,33 @@ header{
     background-color: transparent;
 }
 
-.barre{
+a{
+    text-decoration: none;
+    color: white;
 
-    border-bottom: 2px solid white;
-    width:30px;
 }
 
-.mobile{
+a:hover{
 
-    position:absolute;
-    display:none;
+    color:black;
 }
 
-.desktop{
-    
-    display:none;
-}
-
-.desktop ul{
-
-    display:flex;
-    gap: var(--spacing);
-}
-
-main{
-
-    padding: var(--spacing);
-    
-}
-
+/* ==============================================TITRES========================================================*/
 
 h1{
-    
+
+    width:400px;
     text-transform: uppercase;
+    margin: 0 auto;
     margin-bottom: var(--spacing);
     font-weight: 700;
-    font-size: 1.6rem;
-    padding:10px;
-    background-color:#765342;
-    box-shadow: #ffffee 0px 5px 15px;
+    font-size: 1.4em;
+    border-radius: 20%;
+    background-color:#c78e60;
+    color: white;
+    justify-content: center;
     text-align: center;
 }
-
 
 h2{
     
@@ -142,23 +101,100 @@ h2{
     font-weight: bold;
     text-transform: uppercase;
     font-size:18px;
-    margin: 20px;
+    margin: 30px;
     text-decoration:overline;
-}
-/*=======================eleves====================*/
-.position{
-
-    display: flex;
-    justify-content: center;
-    max-width: 100%;
+    line-height: 30px;
 }
 
-.wrapper {
+h3{
 
-    border:10px dotted white;
-    width: 1000px;
+    text-align:center;
+    font-weight:bold;
+    text-transform: uppercase;
+    font-size: 21px;
+    text-decoration: overline;
+    color: #c78e60;
+    margin-top:90px;
+
+}
+/* ==============================================BODY & MAIN====================================================*/
+
+
+body {
+    
+    font-family: var(--primary-font-family);
+  
+}
+
+
+main{
+
+    padding: var(--spacing);
+    
+}
+
+.container{
+
+     display:flex;
+     justify-content: center;
+     flex-wrap:wrap;
+}
+
+
+.langage{
+
+    border-radius: 50%;
+    max-width: 500px;
+       
+}
+
+.one{
+
+   border-radius: 20%;
+   max-width: 300px;
+
+}
+
+
+p{
+
+    font-family: 'Dosis', sans-serif;
+    font-size: 18px;
+    font-weight:600;
+    line-height: 27px;
+    margin:30px auto; 
+    padding: 25px;
+    background-color:#f2f2f2;
+    border: 4px solid #c78e60;
+    max-width: 60%;
+    display:flex;
+    text-align:justify;
+
+}
+
+
+.container2{
+
     display:flex;
     justify-content: center;
+    gap:30px;
+    padding:40px;
+   
+}
+
+.delegue img{
+
+    max-width:300px;
+    border: 3px solid #c78e60;
+    border-radius: 30%;
+   
+}
+
+.container3 {
+
+    border:15px dotted #c78e60;
+    width: 100% auto;
+    border-radius: 50%;
     
 }
 
@@ -167,70 +203,115 @@ h2{
     display:flex;
     justify-content: center; 
     flex-wrap: wrap;
+    gap:40px;
 }
 
 .eleves>* {
 
     margin: 10px;
-    padding:50px;
+    padding:40px;
+
 }
 
 .eleve img{
 
     max-width:200px;
+    border: 1px solid black;
+    
 }
 
 
+/* ==============================================FORMULAIRE====================================================*/
 
-/*==================description================*/
+.container4{
 
-
-
-.formulaire{
-
-    margin:60px;
-    padding:20px;
 
     display:flex;
-    flex-direction: row;
     justify-content: center;
-
-
+    
+   
+   
 }
 
-.contactez-nous{
+
+.label-input{
 
     display:flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    line-height: 40px;
+    padding:30px;
+    
+ 
 }
 
-p{
-    font-size: 18px;
-    font-weight: bold;
-    margin:5px;
+input{
+
+    padding: 15px;
+    width:400px;
+    border-radius:20%;
+  
 }
-/*===========footer=============*/
+
+
+
+.go{              /*a revoir*/
+
+    background-image: url(assets/fondbutton1.webp);
+    background-size: auto;
+
+    font-size:15px;
+    max-width:40%;
+    padding: 40px;
+    margin: 20px;
+    border-radius: 30%;
+  
+   
+    
+}
+
+.sujet{
+
+    padding: 15px;
+    max-width:auto;
+  
+}
+
+label{
+    color:#c78e60;
+    font-weight: bold;
+    font-size:20px;
+}
+
+textarea{
+
+    padding:40px;
+    width: 400px;
+    font-family: 'Karla', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+
+/* ==============================================FOOTER========================================================*/
 
 footer{
 
     padding: var(--spacing);
-    margin:50px;
+   
     background-color: bisque;
     text-align: center;
-    font-size: 15px;
+    font-size: 20px;
     font-weight:bolder;
 }
 
+/* ==============================================VERSION MOBILE========================================================*/
 
-@media (min-width: 769px){
+@media (min-width: 769px) and (max-width: 1400px){
     .menu-mobile{
         display:none;
     }
     .desktop{
         display:block;
-    }
-    .eleve:hover{
-        transform: scale(1.04);
     }
 }
