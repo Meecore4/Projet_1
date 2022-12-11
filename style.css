@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 :root{
 
     --primary-font-family: "Karla", sans-serif;
@@ -13,7 +14,6 @@
 
 .logo{
 
-   
     border: #0f0f0f 2px solid;
     background-color:#ffffee; 
       
@@ -21,9 +21,7 @@
 
 .logo img{
 
-        width:70px;
-   
-  
+    width:70px;
 }
 
 header{
@@ -31,8 +29,7 @@ header{
     background-color: #c78e60;
     display:flex;
     position:relative;
-    
-    
+       
 }
 
 
@@ -41,13 +38,11 @@ header{
 .nav-toggler{
 
     position: fixed;
-    z-index: 10;
     top:15px;
     right: 30px;
     height: 50px;
     width:50px;
     border:none;
-    outline:none;
     cursor:pointer;
     display:flex;
     justify-content: center;
@@ -58,20 +53,18 @@ header{
 
 .line{
 
-    position: absolute;
+    position: absolute; /* sort du flux, se positionne en haut à gauche ou par rapport au premier parent trouvé*/
     display:block;
     width:100%;
     height:2px;
     background:#f1f1f1;
-    transition: transform 0.3s ease-out;
-    opacity: 0.1s ease-out;
-    
+    transition: transform 0.3s ease-in; /*lent au debut, rapide à la fin*/
+     
 }
 
 .l1{
 
-    transform: translateY(-10px)
-  
+    transform: translateY(-10px) /*repositionne un élément verticalement sur le plan 2D*/
 }
 
 .l3{
@@ -98,6 +91,7 @@ header{
 }
 
 nav{
+
     position: fixed;
     width: 30vw;
     min-height:100%;
@@ -110,19 +104,19 @@ nav{
     opacity:0.70;
     border-left: 1px solid #cfcfcf;
     transform: translateX(100%);
-    transition: transform 0.3s cubic-bezier(0.73, 0.11, 0.67, 0.84)
+    transition: transform 0.3s cubic-bezier(0.73, 0.11, 0.67, 0.84) /*permet de parametrer la courbe avec 4 coeff compris entre 0 et 1*/
 }
 
 nav.active{
 
-    transform: translate(0);
-    
+    transform: translate(0);    
 
 }
+
 nav a {
 
     color: white;
-    font-size:18px;
+    --font-size: 18px;
     display:block;
     margin: 15px;
     font-weight: bold;
@@ -157,6 +151,8 @@ button.nav-toggler{
     font-weight: bold;
     color: white;
 }
+
+
 /* ==============================================TITRES========================================================*/
 
 h1{
@@ -179,7 +175,8 @@ h2{
     text-align: center;
     font-weight: bold;
     text-transform: uppercase;
-    font-size:18px;
+    --font-size: 18px;
+    padding-top:50px; 
     margin: 30px;
     text-decoration:overline;
     line-height: 30px;
@@ -198,15 +195,55 @@ h3{
     line-height: 50px;
 
 }
-/* ==============================================BODY & MAIN====================================================*/
 
+h4{
+
+    display:inline-block;
+    position: relative;
+    background-color: #0f0f0f;
+    border-radius: 20%;
+    color:#f1f1f1;
+    padding: 30px;
+    margin-bottom: 100px;
+    font-family: 'Space Mono', monospace;
+    text-transform: uppercase;
+    left:35px;
+    
+}
+
+h4::after{
+
+    content:"";
+    position: absolute;
+    display: block;
+    height:40%;
+    width:2px;
+    background-color: #dadada;
+    right:25px;
+    top:25px;
+    animation: cursor 1s infinite;
+}
+
+@keyframes cursor { /*permet de definir les etapes d'une animation CSS*/
+
+    0%{
+        opacity: 1;
+    }
+
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/* ==============================================BODY & MAIN====================================================*/
 
 body {
     
     font-family: var(--primary-font-family);
   
 }
-
 
 main{
 
@@ -218,16 +255,66 @@ main{
 
      display:flex;
      justify-content: center;
-     flex-wrap:wrap;
+    
 }
 
+/*-----------------------------Carte tournante-------------------------*/
+
+.cards{
+
+    transition: transform 2s ease-in-out;
+    transform-style: preserve-3d; 
+    width: 200px;
+    height: 300px;
+    position: relative; /*reste dans le flux, position modifié*/
+}
+
+.card{
+
+    width: 100%;
+    height:100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.card-devant{
+
+    z-index: 1; /*precise l'empilement des éléments d'une page */ 
+
+}
+
+.card-derriere{
+
+    z-index: 2;
+    transform: rotateY(180deg);
+   
+}
+
+.cards:hover{
+
+    transform: rotateY(180deg);
+}
+
+.qualites{
+
+    display:flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #e0c470;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 40px;
+    border:4mm ridge #0f0f0f;
+    
+}
 
 .langage{
 
     border-radius: 50%;
     width:300px;
-    
-       
+    height: 300px;
+         
 }
 
 .one{
@@ -255,35 +342,68 @@ main{
 .container2{
 
     display:flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
-    flex-wrap:wrap;
-    gap:50px;
-    padding:40px;
+    gap:20px;
+    width: 100%;
+    height:500px;
+    margin-bottom: 40px;
+   
    
 }
 
-.delegue img{
+.delegue1{
 
    
     border: 3px solid #c78e60;
-    border-radius: 30%;
-    width:220px;
-    transform: .4s;
-    
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
 
 }
 
-.delegue img:hover{
+.delegue2{
 
-    cursor:pointer;
-    transform: scale(2);
+    border: 3px solid #c78e60;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+   
 }
 
+.two{
+
+    max-width:150px;
+    display:flex;
+    justify-content: center;
+}
+
+.three{
+
+    max-width:150px;
+    display:flex;
+}
+
+.commentaire1{
+
+    margin-top: 42px;
+    font-weight: bold;
+}
+
+
+.commentaire2{
+
+    margin-top: 42px;
+    font-weight: bold;
+    text-align: center;
+}
 
 .container3 {
 
     border:15px dotted #c78e60;
-    
     border-radius: 50%;
     
 }
@@ -296,7 +416,7 @@ main{
     gap:40px;
 }
 
-.eleves>* {
+.eleves>* { /*permet de cibler tout les éléments du document*/
 
     margin: 10px;
     padding:40px;
@@ -305,7 +425,6 @@ main{
 
 .eleve img{
 
-    
     border: 1px solid black;
     width:200px;
     border-radius: 20%;
@@ -324,8 +443,8 @@ main{
 
     display:flex;
     justify-content: center;
-     border: 3px inset #c78e60;
-     margin-top: 80px;
+    border: 3px inset #c78e60;
+    margin-top: 80px;
 }
 
 .entete-form{
@@ -338,10 +457,8 @@ main{
     color:white;
     line-height: 20px;
     font-weight: bold;
-    
 
 }
-
 
 #nom{
     
@@ -388,7 +505,7 @@ button.go{
 
     background-image: url(assets/fondbutton1.webp);
     background-size: auto;
-    font-size:15px;
+    --font-size: 18px;
     padding: 30px;
     margin: 30px;
     border-radius: 50%;  
@@ -424,7 +541,7 @@ footer{
     padding: var(--spacing);
     color:white;
     background-color: #c78e60;
-    text-align: end;
+    text-align: center;
     font-size: 18px;
     font-weight:bolder;
   
@@ -439,16 +556,15 @@ footer{
         display:none;
     }
 
-    .delegue img{
+    
+    .container{
 
-        max-width:80px;
         display:flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
     }
 
-    .title-delegue{
-
-        max-width: 10px;
+    .active{
+        z-index: 1;
     }
 }
 
@@ -463,4 +579,16 @@ footer{
     .description{
 
         width: 800px;
-    }}
+    }
+
+    header{
+
+        justify-content: space-between;
+    }
+
+    h4{
+        position:relative;
+        left:200px;
+    }
+
+}
