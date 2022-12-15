@@ -25,7 +25,7 @@ function typewriter(delegue, index){
             typewriter(txt, index + 1)
         },
          
-        200);
+        300);
      }
 }
 
